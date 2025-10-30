@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import svgPaths from "./imports/svg-chrtb08d28";
+import linkedinPaths from "./imports/svg-fpomokqm3p";
 import imgImageSecondhandShoppingAppMockup from "figma:asset/f5437d86a4fa734e2e9bb6c802118c6b547eb7ab.png";
 import SecondhandShopping from "./pages/SecondhandShopping";
 import OnboardingPlatform from "./pages/OnboardingPlatform";
@@ -13,43 +14,23 @@ function navigateTo(path: string) {
   window.dispatchEvent(new CustomEvent("navigate", { detail: { path } }));
 }
 
-function Button() {
-  return (
-    <button 
-      onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
-      className="basis-0 grow h-[28px] min-h-px min-w-px relative shrink-0 hover:opacity-70 transition-opacity cursor-pointer" 
-      data-name="Button"
-    >
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border h-[28px] relative w-full">
-        <p className="absolute font-['Poppins:Medium',sans-serif] leading-[28px] left-0 not-italic text-[#333333] text-[18px] text-nowrap top-[3.5px] whitespace-pre">Portfolio</p>
-      </div>
-    </button>
-  );
-}
-
-function Button1() {
-  return (
-    <button 
-      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-      className="h-[28px] relative shrink-0 w-[62.039px] hover:opacity-70 transition-opacity cursor-pointer" 
-      data-name="Button"
-    >
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border h-[28px] relative w-[62.039px]">
-        <p className="absolute font-['Poppins:Medium',sans-serif] leading-[28px] left-0 not-italic text-[#333333] text-[18px] text-nowrap top-[3.5px] whitespace-pre">Contact</p>
-      </div>
-    </button>
-  );
-}
-
+// Navigation components
 function Nav() {
   return (
-    <div className="h-[28px] flex items-center" data-name="Nav">
-      <div className="sm:hidden">
-        <NavWrapper />
-      </div>
-      <div className="hidden sm:flex gap-[25px] lg:gap-[40px] items-center">
-        <Button />
-        <Button1 />
+    <div className="w-full px-6 sm:px-12 lg:px-[96px] py-5 inline-flex justify-end items-baseline gap-5" data-name="Nav">
+      <div className="flex justify-start items-baseline gap-5">
+        <button
+          onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
+          className="hover:opacity-70 transition-opacity cursor-pointer text-[#333333] text-[18px] font-['Poppins:Medium',sans-serif] leading-[28px]"
+        >
+          Portfolio
+        </button>
+        <button
+          onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+          className="hover:opacity-70 transition-opacity cursor-pointer text-[#333333] text-[18px] font-['Poppins:Medium',sans-serif] leading-[28px]"
+        >
+          Contact
+        </button>
       </div>
     </div>
   );
@@ -218,7 +199,7 @@ function H1() {
   return (
     <div className="relative shrink-0 w-full md:w-[271.681px]" data-name="h3">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border content-stretch flex flex-col items-center justify-center relative w-full">
-        <p className="font-['Poppins:Regular',sans-serif] leading-[29.25px] md:leading-[35.217px] not-italic relative shrink-0 text-[#333333] text-[18px] md:text-[26.413px] text-center tracking-[-0.6603px]">Built in AI Chrome Extension: Digital Break Reminders</p>
+        <p className="font-['Poppins:Regular',sans-serif] leading-[29.25px] md:leading-[35.217px] not-italic relative text-[#333333] text-[18px] md:text-[26.413px] text-center tracking-[-0.6603px] break-words">Built in AI Chrome Extension: Digital Break Reminders</p>
       </div>
     </div>
   );
@@ -231,7 +212,7 @@ function Card3() {
       className="bg-[#fcffff] relative rounded-xl md:rounded-[17.609px] shrink-0 w-full max-w-[800px] hover:bg-[rgba(252,255,255,0.8)] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer" 
       data-name="Card4"
     >
-      <div className="box-border content-stretch flex flex-col md:flex-row gap-4 md:gap-[20px] items-center justify-center overflow-clip px-4 md:px-[23.111px] py-8 md:py-[50.625px] relative rounded-[inherit] w-full">
+      <div className="box-border content-stretch flex flex-col md:flex-row gap-3 items-center justify-center overflow-clip px-4 md:px-6 py-6 md:py-8 relative rounded-[inherit] w-full">
         <div className="scale-75 md:scale-100">
           <BreakCard />
         </div>
@@ -247,7 +228,7 @@ function Card3() {
 function Heading2() {
   return (
     <div className="basis-0 content-stretch flex gap-[10px] grow items-center justify-center min-h-px min-w-px relative shrink-0 w-full" data-name="Heading 3">
-      <p className="font-['Poppins:SemiBold',sans-serif] leading-[26px] md:leading-[22.025px] not-italic relative shrink-0 text-[#333333] text-[16px] md:text-[20px] text-center tracking-[-0.413px]">Automation for Design Research</p>
+      <p className="font-['Poppins:SemiBold',sans-serif] leading-[26px] md:leading-[28px] not-italic relative text-[#333333] text-[16px] md:text-[20px] text-center tracking-[-0.413px] break-words">Automation for Design Research</p>
     </div>
   );
 }
@@ -255,7 +236,7 @@ function Heading2() {
 function Paragraph4() {
   return (
     <div className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0 w-full" data-name="Paragraph">
-      <p className="font-['Poppins:Medium',sans-serif] leading-[22.75px] md:leading-[19.272px] not-italic relative shrink-0 text-[#797777] text-[14px] md:text-[12.389px] text-center">Custom system built to efficiently analyze 4k+ data points.</p>
+      <p className="font-['Poppins:Medium',sans-serif] leading-[20px] md:leading-[19.272px] not-italic relative text-[#797777] text-[12px] sm:text-[14px] md:text-[12.389px] text-center px-2 break-words">Custom system built to efficiently analyze 4k+ data points.</p>
     </div>
   );
 }
@@ -273,7 +254,7 @@ function Frame() {
 
 function Container2() {
   return (
-    <div className="content-stretch flex flex-col gap-[5.506px] items-center justify-center relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[6px] items-center justify-center relative shrink-0 w-full" data-name="Container">
       <Frame />
     </div>
   );
@@ -283,13 +264,13 @@ function Card1() {
   return (
     <button
       onClick={() => navigateTo("/automation-research")}
-      className="bg-[#fcffff] relative rounded-xl md:rounded-[11.012px] shrink-0 w-full max-w-[801px] hover:bg-[rgba(252,255,255,0.8)] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer" 
+      className="bg-[#fcffff] relative rounded-xl shrink-0 w-full max-w-[800px] hover:bg-[rgba(252,255,255,0.8)] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer" 
       data-name="Card2"
     >
-      <div className="box-border content-stretch flex flex-col gap-[10px] items-center justify-center overflow-clip px-4 md:px-[23px] py-4 md:py-[16px] relative rounded-[inherit] w-full">
+      <div className="box-border content-stretch flex flex-col gap-3 items-center justify-center overflow-clip px-4 md:px-6 pt-12 pb-14 md:pt-16 md:pb-16 relative rounded-[inherit] w-full">
         <Container2 />
       </div>
-      <div aria-hidden="true" className="absolute border border-[rgba(121,119,119,0.76)] border-solid inset-0 pointer-events-none rounded-xl md:rounded-[11.012px]" />
+      <div aria-hidden="true" className="absolute border border-[rgba(121,119,119,0.75)] border-solid inset-0 pointer-events-none rounded-xl" />
     </button>
   );
 }
@@ -298,7 +279,7 @@ function H2() {
   return (
     <div className="relative shrink-0 w-full md:w-[271.681px]" data-name="h3">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border content-stretch flex flex-col items-center justify-center relative w-full">
-        <p className="font-['Poppins:Regular',sans-serif] leading-[29.25px] md:leading-[35.217px] not-italic relative shrink-0 text-[#333333] text-[18px] md:text-[26.413px] text-center tracking-[-0.6603px]">Addressing Barriers to Secondhand Shopping Through App Design</p>
+        <p className="font-['Poppins:Regular',sans-serif] leading-[29.25px] md:leading-[35.217px] not-italic relative text-[#333333] text-[18px] md:text-[26.413px] text-center tracking-[-0.6603px] break-words">Addressing Barriers to Secondhand Shopping Through App Design</p>
       </div>
     </div>
   );
@@ -320,7 +301,7 @@ function Card2() {
       className="bg-[#fcffff] relative rounded-xl md:rounded-[17.609px] shrink-0 w-full max-w-[801px] hover:bg-[rgba(252,255,255,0.8)] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer" 
       data-name="Card3"
     >
-      <div className="box-border content-stretch flex flex-col md:flex-row gap-4 md:gap-[26.422px] items-center justify-center overflow-clip px-4 md:px-[23.011px] py-8 md:py-[50.525px] relative rounded-[inherit] w-full">
+      <div className="box-border content-stretch flex flex-col md:flex-row gap-3 items-center justify-center overflow-clip px-4 md:px-6 py-6 md:py-8 relative rounded-[inherit] w-full">
         <div className="flex flex-row items-center self-stretch w-full md:w-auto">
           <H2 />
         </div>
@@ -335,7 +316,7 @@ function Heading3() {
   return (
     <div className="basis-0 grow min-h-px min-w-px relative shrink-0" data-name="Heading 3">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border content-stretch flex gap-[10px] h-full items-center justify-center relative">
-        <p className="font-['Poppins:SemiBold',sans-serif] leading-[26px] md:leading-[22.025px] not-italic relative shrink-0 text-[#333333] text-[16px] md:text-[20px] text-center tracking-[-0.413px]">Onboarding for Enterprise Platform</p>
+        <p className="font-['Poppins:SemiBold',sans-serif] leading-[26px] md:leading-[30px] not-italic relative text-[#333333] text-[16px] md:text-[20px] text-center tracking-[-0.413px] break-words">Onboarding for Enterprise Platform</p>
       </div>
     </div>
   );
@@ -345,7 +326,7 @@ function Paragraph5() {
   return (
     <div className="relative shrink-0" data-name="Paragraph">
       <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border content-stretch flex gap-[10px] items-center justify-center relative">
-        <p className="font-['Poppins:Medium',sans-serif] leading-[22.75px] md:leading-[19.272px] not-italic relative shrink-0 text-[#797777] text-[14px] md:text-[12.389px] text-center tracking-[-0.3097px]">5-screen flow that guides new users through multiple configurations.</p>
+        <p className="font-['Poppins:Medium',sans-serif] leading-[20px] md:leading-[19px] not-italic relative text-[#797777] text-[12px] sm:text-[14px] md:text-[12.389px] text-center tracking-[-0.3097px] px-2 break-words">5-screen flow that guides new users through multiple configurations.</p>
       </div>
     </div>
   );
@@ -353,7 +334,7 @@ function Paragraph5() {
 
 function Container3() {
   return (
-    <div className="content-stretch flex flex-col gap-[5.506px] items-center justify-center relative shrink-0 w-full" data-name="Container">
+    <div className="content-stretch flex flex-col gap-[6px] items-center justify-center relative shrink-0 w-full" data-name="Container">
       <Heading3 />
       <Paragraph5 />
     </div>
@@ -364,13 +345,13 @@ function Card() {
   return (
     <button
       onClick={() => navigateTo("/onboarding-platform")}
-      className="bg-[#fcffff] relative rounded-xl md:rounded-[11.012px] shrink-0 w-full max-w-[800px] hover:bg-[rgba(252,255,255,0.8)] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer" 
+      className="bg-[#fcffff] relative rounded-xl shrink-0 w-full max-w-[800px] hover:bg-[rgba(252,255,255,0.8)] hover:scale-[1.02] hover:shadow-lg transition-all duration-300 cursor-pointer" 
       data-name="Card1"
     >
-      <div className="box-border content-stretch flex flex-col gap-[10px] items-start overflow-clip p-4 md:p-[23px] relative rounded-[inherit] w-full">
+      <div className="box-border content-stretch flex flex-col gap-5 md:gap-3 items-center justify-center overflow-clip px-4 md:px-6 py-12 md:py-14 relative rounded-[inherit] w-full">
         <Container3 />
       </div>
-      <div aria-hidden="true" className="absolute border border-[rgba(121,119,119,0.75)] border-solid inset-0 pointer-events-none rounded-xl md:rounded-[11.012px]" />
+      <div aria-hidden="true" className="absolute border border-[rgba(121,119,119,0.75)] border-solid inset-0 pointer-events-none rounded-xl" />
     </button>
   );
 }
@@ -561,7 +542,7 @@ function Vector() {
 
 function Icon6() {
   return (
-    <div className="absolute box-border content-stretch flex flex-col items-start left-0 overflow-clip pb-0 pr-[943px] size-[24px] top-0" data-name="Icon">
+    <div className="absolute box-border content-stretch flex flex-col items-start left-0 overflow-clip pb-0 size-[24px] top-0" data-name="Icon">
       <Vector />
     </div>
   );
@@ -575,9 +556,21 @@ function SocialLink() {
       data-name="SocialLink3"
       aria-label="LinkedIn Profile"
     >
-      <div className="bg-clip-padding border-0 border-[transparent] border-solid box-border relative size-[24px]">
-        <Icon6 />
-      </div>
+      <svg className="block size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 24 24">
+        <g clipPath="url(#clip0_1_67)">
+          <g>
+            <path clipRule="evenodd" d={linkedinPaths.p1fcf5070} fill="black" fillOpacity="0.45" fillRule="evenodd" />
+            <path d={linkedinPaths.pe7ea00} fill="white" />
+            <path d={linkedinPaths.p1ab31680} fill="white" />
+            <path d={linkedinPaths.p28c6df0} fill="white" />
+          </g>
+        </g>
+        <defs>
+          <clipPath id="clip0_1_67">
+            <rect fill="white" height="24" width="24" />
+          </clipPath>
+        </defs>
+      </svg>
     </button>
   );
 }
@@ -601,18 +594,18 @@ function Contact() {
 
 function Desktop() {
   return (
-    <div className="relative shrink-0 w-full max-w-[1006px] flex flex-col items-center gap-8 md:gap-12 lg:gap-20" data-name="Desktop">
-      <div className="w-full flex justify-center sm:justify-end items-center pt-6 sm:pt-8 lg:pt-[24px] px-6 sm:px-8 lg:px-0">
-        <Nav />
-      </div>
-      <div className="w-full px-6 sm:px-8 lg:px-0">
-        <Hero />
-      </div>
-      <div className="w-full px-6 sm:px-8 lg:px-0">
-        <PortfolioGroup />
-      </div>
-      <div className="w-full px-6 sm:px-8 lg:px-0">
-        <Contact />
+    <div className="relative shrink-0 w-full flex flex-col items-center" data-name="Desktop">
+      <Nav />
+      <div className="w-full max-w-[1006px] flex flex-col items-center gap-8 md:gap-12 lg:gap-20">
+        <div className="w-full px-6 sm:px-8 lg:px-0">
+          <Hero />
+        </div>
+        <div className="w-full px-6 sm:px-8 lg:px-0">
+          <PortfolioGroup />
+        </div>
+        <div className="w-full px-6 sm:px-8 lg:px-0">
+          <Contact />
+        </div>
       </div>
     </div>
   );
@@ -682,3 +675,4 @@ export default function App() {
   
   return <HomePage />;
 }
+
